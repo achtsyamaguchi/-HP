@@ -1,0 +1,76 @@
+@use "../global" as *;
+
+.underlayer_top_wrapper {
+  margin-top: 8.5rem;
+  padding: 8% 15%;
+  background-color: $red2;
+  .underlayer_top_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .page_top_ttl {
+    text-align: center;
+    font-size: clamp(3.2rem,6.85vw, 7rem);
+    .underlayer_sub_ttl {
+      font-size: clamp(1.4rem,1.71vw,2.4rem);
+    }
+  }
+  .page_top_txt {
+    padding-top: 3%;
+    padding-left: 10%;
+    font-size: clamp(1.6rem,2.28vw,3.2rem);
+  }
+}
+
+.under_wrapper {
+  position: relative;
+}
+.under_box {
+    position: absolute;
+    top: -3rem;
+    width: 35%;
+    height: 6rem;
+    background-color: $white;
+  }
+  
+.under_company {
+  margin-bottom: 8.5%;
+  &_concept_txt {
+    padding: 5% 17%;
+  }
+  &_concept_ttl {
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    padding-bottom: 1%;
+    font-family:  'Architects Daughter', cursive ;
+    font-size: clamp(2rem,2.85vw,4rem);
+    border-bottom: 2px solid $parpul2;
+  }
+  &_concept_txt_inner {
+    font-size: clamp(1.4rem,1.42vw,2rem);
+  }
+  &_img {
+    width: 100%;
+    height: auto;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+table {
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 8%;
+  font-size: clamp(1.6rem,1.71vw,2.4rem);
+  tr {
+    border-bottom: 1px solid $blue2;
+  }
+  td {
+    padding: 2rem 0;
+  }
+}
+

@@ -1,0 +1,613 @@
+@use "../global" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto; 
+}
+
+
+html {
+  font-size: 62.5%;
+  font-family: 'Yomogi', cursive;
+}
+
+
+a {
+  text-decoration: none;
+  display: block;
+  color: $black;
+}
+
+button {
+  border: none;
+}
+
+.top_section_btn {//------------------------------------------------まちがうかも？
+  // width: 30rem;
+  margin: 0 auto;
+  // padding: 3rem 2rem;
+  text-align: center;
+  background-color: $pink;
+  border-radius: 50px;
+  font-size: clamp(1.6rem,1.71vw,2.4rem);  
+}
+
+.section_ttl {//-----------------------------------------------------まちがうかも？
+  font-size: clamp(2rem,2.85vw,3.2rem);
+  text-align: center;
+  margin-bottom: 5.6%;
+  .sub_ttl {
+    font-size: clamp(1.4rem,2.85vw,2.4rem);
+    color: $red;
+    font-family: 'Architects Daughter', cursive;
+  }
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $yellow2;
+  z-index: 10;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+
+
+
+.header {//header固定ナビ中央ham右に固定
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $white;
+  z-index: 5;
+
+
+&_inner {
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+}
+&_logo {
+  font-size: clamp(2.5rem,2.14vw,3rem);
+  font-weight: bold;
+  margin-right: auto;
+  
+    a {
+      color: $black;
+    }
+}
+&_nav {
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  @include mq(TB) {
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+  }
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    .header_ul {
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 30px;
+      background-color: $parpul;
+    }
+  }
+}
+  &_ul {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+  }
+  &_li {
+    font-size: clamp(1.6rem,1.42vw,2rem);
+    a {
+      color: $black;
+    }
+  }
+}
+
+.openbtn_box {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  transform: translateY(-50%);
+  // background-color:black;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+    @include mq(TB) {
+      opacity: 1;
+      visibility: visible;
+    }
+.openbtn_inner {
+  position: relative;
+  &.active span:nth-of-type(1) {
+    top: 18px;
+    left: 12px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 50%;
+  }
+  &.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  &.active span:nth-of-type(3) {
+    top: 30px;
+    left: 12px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 50%;
+  }
+span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 55%;
+    height: 3px;
+    background-color: $black;
+    transition: all .5s;
+      &:nth-of-type(1) {
+        top: 15px;
+      }
+      &:nth-of-type(2) {
+        top: 23px;
+      }
+      &:nth-of-type(3) {
+        top: 31px;
+      }
+    }
+  }
+}
+
+.main_wrapper {
+  position: relative;
+  margin-top: 8rem;
+  height: 100vh;
+  @include mq(TB) {
+    height: 45vh;
+  }
+  .main_visual {
+    position: relative;
+    background-image: url("../img/worman1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    @include mq(TB) {
+      height: 45vh;
+    }
+    
+  }
+}
+
+.fluid_container {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+    @include mq(TB) {
+      top: 28%;
+    }
+    @include mq(SP-s) {
+      left: 2%;
+    }
+}
+.fluid {
+  position: relative;
+  width: 44vh;/*横幅*/
+  height: 44vh;/*縦幅*/
+  background: $yellow;/*背景色*/
+  animation: fluidrotate 30s ease 0s infinite;/*アニメーションの設定*/
+    @include mq(TB) {
+      width: 25vh;
+      height: 25vh;
+    }
+    @include mq(TB3) {
+      width: 18vh;
+      height: 18vh;
+    }
+}
+
+@keyframes fluidrotate {  
+    
+  0%, 100% {
+      border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  }
+  14% {
+      border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+  }
+  28% {
+      border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+  }
+  42% {
+      border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+  }
+  56% {
+      border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+  }
+  70% {
+      border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+  }
+  84% {
+      border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+  }
+      
+}
+
+.fluid_logo {
+  position: absolute;
+  top: 45%;
+  left: 30%;
+  // transform: translate(-50%, -50%);
+  font-size: clamp(1.6rem,2.28vw,3.2rem);
+  transform: rotate(-25deg);
+}
+
+.main_txt {
+  position: absolute;
+  bottom: 15%;
+  right: 5%;
+  font-size: clamp(1.4rem,2.28vw,3.2rem);
+  padding: 3%;
+  border-radius: 60px;
+  background-color: $parpul2;
+}
+
+.company {
+  position: relative;
+    &_wrapper {
+      display: flex;
+      padding: 8.5% 6%;
+        p {
+          font-size: clamp(1.4rem,1.42vw,2rem);
+        }
+        &_txt {
+          width: 50%;
+          padding: 6% 0;
+          padding-left: 6%;
+            &_ttl {
+            width: fit-content;
+            margin: 0 auto;
+            border-bottom: 2px solid $pink;
+            font-size: clamp(1.6rem,1.71vw,2.4rem);
+            margin-bottom: 13.5%;
+            }
+          &_inner1 {
+            margin-bottom: 9.5%;
+          }
+          &_inner2 {
+            margin-bottom: 13.5%;
+          }
+          .company_btn {
+            width: 45%;
+            padding: 4% 0;
+          }
+        }
+        
+        &_img {
+          width: 40%;
+          height: auto;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+        }
+      }
+      .box {
+        position: absolute;
+        top: -3rem;
+        right: 0;
+        height: 6rem;
+        width: 55%;
+        background-color: $white;
+      }
+}
+
+.works {
+  margin-bottom: 8.5%;
+  &_wrapper {
+    padding-bottom: 6%;
+  }
+    &_img {
+      display: flex;
+      width: 90%;
+      margin: 0 auto;
+      overflow: hidden;
+      .slick-slide {//------スライドアイテムの間の余白指定
+        padding: 0 10px;
+      }
+      .slick-dots li button:before {//----ドットの幅指定方法
+        font-size: 1.6rem!important;
+      }
+    }
+    .slide_item {
+    .slide_img {
+      width: 100%;
+      height: auto;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+    }
+    .slide_txt {
+      text-align: center;
+      width: 100%;
+      padding: 10%;
+      .slide_txt_ttl {
+        width: fit-content;
+        margin: 0 auto;
+        margin-bottom: 5%;
+        font-size: clamp(1.6rem,1.71vw,2rem);
+        border-bottom: 1px solid $yellow3;
+      }
+      .slide_txt_inner {
+        display: inline-block;
+        text-align: left;
+        font-size: clamp(1.4rem,1.14vw,1.6rem);
+      }
+    }
+  }
+  .works_btn {
+    width: 18%;
+    padding: 1.5% 0;
+  }
+}
+
+.success {
+  margin-bottom: 8.5%;
+  &_box {
+    display: flex;
+    &_img {
+      width: 50%;
+      height: auto;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &_txt {
+      text-align: center;
+      width: 40%;
+      margin-left: 5%;
+      padding: 13% 0;
+      &_ol {
+        list-style-type: decimal-leading-zero;
+        font-size: clamp(1.6rem,1.71vw,2.4rem);
+        display: inline-block;
+        text-align: left;
+        margin-left: 2rem;
+          &_li {
+            line-height: 2;
+            border-bottom: 1px solid $red;
+            &_sub {
+              font-size: clamp(1.4rem,1.14vw,1.6rem);
+            }
+          }
+          li {
+            padding-bottom: 6%;
+            &:last-child {
+              padding-bottom: 0;
+            }
+          }
+      }
+      &_logo {
+        // position: relative;
+        margin: 0 auto;
+        margin-bottom: 8%;
+        width: 22%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &_under_txt {
+    background-color: $parpul;
+    padding: 5% 0;
+    &_ttl {
+      width: 70%;
+      margin: 0 auto;
+      font-size: clamp(1.6rem,1.71vw,2.4rem);
+      padding-bottom: 3%;
+    }
+    &_inner {
+      width: 70%;
+      margin: 0 auto;
+      font-size: clamp(1.4rem,1.42vw,2rem);
+    }
+  } 
+}
+
+.news {
+  &_box {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 8.5%;
+    &_right {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-left: 10%;
+      // margin-bottom: 2rem;
+    }
+    &_txt {
+      padding: 2.5rem 0;
+      width: 100%;
+    }
+    &_pagenation {
+      width: 20%;
+      
+      // margin-left: 40%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+    }
+      &_txt_date {
+        width: fit-content;
+        font-size: clamp(1.6rem,1.71vw,2.4rem);
+        margin-bottom: 10%;
+        border-bottom: 1px solid $red;
+      }
+      &_txt_inner {
+        font-size: clamp(1.6rem,1.71vw,2.4rem);
+        
+      }
+    &_inner {
+      display: flex;
+      margin-bottom: 2rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &_img {
+      width: 100%;
+      height: auto;
+      // margin-bottom: 2rem;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.contact {
+  &_sub_ttl {
+    font-size: clamp(1.4rem,2.85vw,2.4rem);
+    font-family: 'Architects Daughter', cursive;
+    color: $black;
+  }
+  &_box {
+    margin: 0 auto;
+    padding: 3% 6%;
+    background-color: $pink;
+    display: flex;
+    &_img {
+      width: 50%;
+      height: auto;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &_txt {
+    width: 50%;
+    margin-left: 6%;
+    padding-top: 15%;
+    .contact_btn {
+      width: 60%;
+      padding: 5% 0;
+      border: 1px solid $blue;
+      background-color: $white;
+    }
+  }
+}
+
+.footer {
+    position: relative;
+  .wave {
+    position: relative;
+    overflow: hidden;
+    padding-top: 14%;
+    padding-bottom: 10%;
+    width: 100%;
+    
+    svg {
+      position: absolute;
+      z-index:-1;
+      bottom: 0;
+      width: 100%;
+      display: block;
+    }
+  }
+  &_inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+  &_logo {
+    text-align: center;
+    margin-bottom: 2%;
+    font-size: clamp(1.4rem,2.85vw,4rem);
+  }
+  &_adress_box {
+    display: flex;
+    justify-content: center;
+    font-size: clamp(1rem,1.14vw,1.6rem);
+    .adress1_shopname,
+    .adress2_shopname {
+      margin-bottom: 5%;
+    }
+  }
+  &_adress1 {
+    border-right: 1px solid $blue;
+    padding-right: 2rem;
+  }
+  &_adress2 {
+    padding-left: 2rem;
+  }
+}
+
+
