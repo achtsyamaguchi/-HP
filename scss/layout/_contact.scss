@@ -77,6 +77,10 @@
       border-radius: 50px;
       font-size: clamp(2rem,2.57vw,3.6rem);
       background-color: $yellow4;
+      transition: all 1s;
+      &:hover {
+        background-color: $pink;
+      }
       @include mq(TB3) {
         width: 13rem;
         right: 50%;

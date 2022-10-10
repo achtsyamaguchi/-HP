@@ -36,7 +36,8 @@
     font-size: clamp(1.4rem,2.28vw,3.2rem);
     @include mq(SP-s) {
       padding-top: 6%;
-      padding-left: 0;
+      margin: unset;
+      width: 80%;
     }
   }
 }

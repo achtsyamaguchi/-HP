@@ -1,13 +1,16 @@
-$(function () {
-  function end_loader() {
-    $('.loading').fadeOut(200);
-  }
-  $(window).on('load', function () {
-    setTimeout(function () {
-      end_loader();
-    },3000)
-  })
+function endLoading(){
+  $('.loading').fadeOut(700);
+}
+
+$(window).on('load', function () {
+  setTimeout(function () {
+    endLoading();
+  },3000)
 })
+
+// steTimeout('endLoading()', 10000);
+
+
 
 
 $(".openbtn_inner").click(function () {

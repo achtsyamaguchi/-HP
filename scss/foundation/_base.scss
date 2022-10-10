@@ -253,7 +253,7 @@ span {
   position: absolute;
   top: 35%;
   left: 10%;
-    @include mq(TB) {
+    @include mq(TB-L) {
       top: 28%;
     }
     @include mq(SP-s) {
@@ -266,9 +266,9 @@ span {
   height: 44vh;
   background: $yellow;
   animation: fluidrotate 30s ease 0s infinite;
-    @include mq(TB) {
-      width: 25vh;
-      height: 25vh;
+    @include mq(TB-L) {
+      width: 35vh;
+      height: 35vh;
     }
     @include mq(TB3) {
       width: 18vh;
@@ -304,10 +304,14 @@ span {
 
 .fluid_logo {
   position: absolute;
-  top: 38%;
-  left: 20%;
+  top: 40%;
+  left: 28%;
   font-size: clamp(2rem,4.28vw,6rem);
   transform: rotate(-25deg);
+  @include mq(TB-L) {
+    top: 45%;
+    left: 30%
+  }
 }
 
 .main_txt {
