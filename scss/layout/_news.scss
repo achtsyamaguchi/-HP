@@ -43,12 +43,18 @@
       position: relative;
       display: inline-block;
       vertical-align:baseline;
-      padding-right: 10rem;
+      padding-right: 8%;
       font-size: clamp(1.4rem,1.42vw,2rem);
+      @include mq(SP2) {
+        padding-right: 15%;
+      }
       &::after {
         position: absolute;
         top: 50%;
-        left: 50%;
+        left: 55%;
+        @include mq(SP2) {
+          left: 50%;
+        }
         content: "";
         display: block;
         width: 1rem;
@@ -65,12 +71,18 @@
       position: relative;
       display: inline-block;
       vertical-align:baseline;
-      padding-left: 10rem;
+      padding-left: 8%;
       font-size: clamp(1.4rem,1.42vw,2rem);
+      @include mq(SP2) {
+        padding-left: 15%;
+      }
       &::before {
         position: absolute;
         top: 50%;
-        right: 50%;
+        right: 55%;
+        @include mq(SP2) {
+          right: 50%;
+        }
         content: "";
         display: block;
         width: 1rem;

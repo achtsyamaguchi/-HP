@@ -1,25 +1,43 @@
 @use "../global" as *;
 
 .underlayer_top_wrapper {
-  margin-top: 8.5rem;
-  padding: 8% 15%;
+  margin-top: 6rem;
+  padding: 10% 12%;
   background-color: $red2;
+  transition: all 1s;
+  &:hover {
+    background-color: $parpul2;
+  }
   .underlayer_top_inner {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .page_top_ttl {
-    text-align: center;
-    font-size: clamp(3.2rem,6.85vw, 7rem);
-    .underlayer_sub_ttl {
-      font-size: clamp(1.4rem,1.71vw,2.4rem);
+    @include mq(SP-s){
+      flex-direction: column;
     }
   }
+  
+  .page_top_ttl {
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(3.2rem,6.85vw, 7rem);
+    .underlayer_sub_ttl {
+      color: $black;
+      font-weight: bold;
+      font-size: clamp(1.2rem,1.71vw,2.4rem);
+    }
+  }
+
   .page_top_txt {
-    padding-top: 3%;
-    padding-left: 10%;
-    font-size: clamp(1.6rem,2.28vw,3.2rem);
+    padding: 3%;
+    margin-left: 15%;
+    font-weight: bold;
+    color: $black;
+    font-size: clamp(1.4rem,2.28vw,3.2rem);
+    @include mq(SP-s) {
+      padding-top: 6%;
+      padding-left: 0;
+    }
   }
 }
 
@@ -28,9 +46,9 @@
 }
 .under_box {
     position: absolute;
-    top: -3rem;
+    top: -1.5rem;
     width: 35%;
-    height: 6rem;
+    height: 3rem;
     background-color: $white;
   }
   
@@ -69,8 +87,19 @@ table {
   tr {
     border-bottom: 1px solid $blue2;
   }
+  th {
+    @include mq(SP2) {
+      display: block;
+      padding: 1rem 0;
+    }
+  }
   td {
     padding: 2rem 0;
+    @include mq(SP2) {
+      display: block;
+      padding: unset;
+      padding-bottom: 1rem;
+    }
   }
 }
 

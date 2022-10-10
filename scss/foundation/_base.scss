@@ -2,41 +2,62 @@
 
 * {
   box-sizing: border-box;
+  line-height: 1.6;
+}
+
+*:focus {
+  outline: none;
 }
 
 body {
   margin: 0 auto; 
 }
 
-
 html {
   font-size: 62.5%;
   font-family: 'Yomogi', cursive;
 }
 
-
 a {
   text-decoration: none;
   display: block;
   color: $black;
+  cursor: pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 button {
   border: none;
 }
 
-.top_section_btn {//------------------------------------------------まちがうかも？
-  // width: 30rem;
+.top_section_btn {
+  width: 20rem;
+  padding: 2rem;
   margin: 0 auto;
-  // padding: 3rem 2rem;
   text-align: center;
   background-color: $pink;
   border-radius: 50px;
-  font-size: clamp(1.6rem,1.71vw,2.4rem);  
+  transition: all 1s;
+  font-weight: bold;
+  font-size: clamp(1.6rem,1.71vw,2rem);  
+  animation: poyopoyo 2s ease-out infinite;
+  opacity: 1;
+  &:hover {
+    background-color: $parpul;
+  }
+  }
+  @keyframes poyopoyo {
+    0%, 40%, 60%, 80% {
+      transform: scale(1.0);
+    }
+    50%, 70% {
+      transform: scale(0.95);
+    }
 }
 
-.section_ttl {//-----------------------------------------------------まちがうかも？
+.section_ttl {
   font-size: clamp(2rem,2.85vw,3.2rem);
+  font-weight: bold;
   text-align: center;
   margin-bottom: 5.6%;
   .sub_ttl {
@@ -73,7 +94,6 @@ button {
   position: absolute;
   top: 0;
   left: 0;
-  
   -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
   animation: sk-bounce 2.0s infinite ease-in-out;
 }
@@ -99,63 +119,63 @@ button {
 }
 
 
-
-
-.header {//header固定ナビ中央ham右に固定
+.header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100vw;
   background-color: $white;
-  z-index: 5;
-
-
-&_inner {
-  height: 8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 2%;
-}
-&_logo {
-  font-size: clamp(2.5rem,2.14vw,3rem);
-  font-weight: bold;
-  margin-right: auto;
-  
-    a {
-      color: $black;
-    }
-}
-&_nav {
-  position: absolute;
-  transition: 0.5s ease-in-out;
-  @include mq(TB) {
-    width: 100%;
-    visibility: hidden;
-    opacity: 0;
-    top: 0;
+  z-index: 5;
+  &_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  &.show {
-    visibility: visible;
-    opacity: 1;
-    .header_ul {
-      height: 100vh;
-      flex-direction: column;
-      align-items: center;
-      row-gap: 30px;
-      background-color: $parpul;
+  &_logo {
+    font-size: clamp(2.5rem,2.14vw,3rem);
+    font-weight: bold;
+    margin-right: auto;
+      a {
+        color: $black;
+      }
+    }
+  &_nav {
+    position: absolute;
+    transition: 1s ease-in-out;
+    @include mq(TB) {
+      width: 100%;
+      visibility: hidden;
+      opacity: 0;
+    }
+    &.show {
+      visibility: visible;
+      opacity: 1;
+      top: 0;
+      .header_ul {
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 30px;
+        background-color: $parpul;
+      }
     }
   }
-}
   &_ul {
     display: flex;
     justify-content: center;
-    column-gap: 30px;
+    column-gap: 1.5rem;
   }
   &_li {
     font-size: clamp(1.6rem,1.42vw,2rem);
+    font-weight: bold;
     a {
       color: $black;
+      @include mq(TB) {
+        color: #fff;
+        font-size: 2rem;
+      }
     }
   }
 }
@@ -165,7 +185,6 @@ button {
   top: 50%;
   right: 3%;
   transform: translateY(-50%);
-  // background-color:black;
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
@@ -216,11 +235,7 @@ span {
 
 .main_wrapper {
   position: relative;
-  margin-top: 8rem;
-  height: 100vh;
-  @include mq(TB) {
-    height: 45vh;
-  }
+  padding-top: 5%;
   .main_visual {
     position: relative;
     background-image: url("../img/worman1.jpg");
@@ -229,9 +244,8 @@ span {
     background-repeat: no-repeat;
     height: 100vh;
     @include mq(TB) {
-      height: 45vh;
+      height: 80vh;
     }
-    
   }
 }
 
@@ -248,10 +262,10 @@ span {
 }
 .fluid {
   position: relative;
-  width: 44vh;/*横幅*/
-  height: 44vh;/*縦幅*/
-  background: $yellow;/*背景色*/
-  animation: fluidrotate 30s ease 0s infinite;/*アニメーションの設定*/
+  width: 44vh;
+  height: 44vh;
+  background: $yellow;
+  animation: fluidrotate 30s ease 0s infinite;
     @include mq(TB) {
       width: 25vh;
       height: 25vh;
@@ -292,7 +306,6 @@ span {
   position: absolute;
   top: 45%;
   left: 30%;
-  // transform: translate(-50%, -50%);
   font-size: clamp(1.6rem,2.28vw,3.2rem);
   transform: rotate(-25deg);
 }
@@ -306,48 +319,85 @@ span {
   border-radius: 60px;
   background-color: $parpul2;
 }
-
+//-------------------------------------------------------
 .company {
   position: relative;
     &_wrapper {
       display: flex;
       padding: 8.5% 6%;
+      opacity: 0;      
+      transition: 1s;
+      top: 50px;
+      position: relative;
+      @include mq(TB-L2) {
+        flex-direction: column;
+        align-items: center;
+        padding: 12% 13%;
+      }
+      @include mq(SP2) {
+        padding: 10% 5%;
+      }
         p {
           font-size: clamp(1.4rem,1.42vw,2rem);
         }
         &_txt {
-          width: 50%;
+          width: 60%;
           padding: 6% 0;
-          padding-left: 6%;
+          padding: 0 6%;
+          @include mq(TB-L2) {
+            width: 100%;
+            padding: unset;
+          }
             &_ttl {
             width: fit-content;
             margin: 0 auto;
+            padding-top: 5%;
             border-bottom: 2px solid $pink;
             font-size: clamp(1.6rem,1.71vw,2.4rem);
             margin-bottom: 13.5%;
+            br  {
+              display: none;
+            }
+            @include mq(TB-L2) {
+              margin-bottom: 9%;
+            }
+            @include mq(SP2) {
+              br {
+                display: block;
+              }
+            }
             }
           &_inner1 {
             margin-bottom: 9.5%;
+            @include mq(TB-L2) {
+              margin-bottom: 5%;
+            }
           }
           &_inner2 {
             margin-bottom: 13.5%;
-          }
-          .company_btn {
-            width: 45%;
-            padding: 4% 0;
+            @include mq(TB-L2) {
+              margin-bottom: 9%;
+            }
           }
         }
-        
         &_img {
           width: 40%;
           height: auto;
+          @include mq(TB-L2) {
+            width: 100%;
+            height: 45vh;
+            margin-bottom: 8%;
+          }
+          @include mq(SP2) {
+            height: 30vh;
+          }
             img {
               width: 100%;
               height: 100%;
-              object-fit: cover;
+              object-fit: cover;              
             }
         }
-      }
+      } 
       .box {
         position: absolute;
         top: -3rem;
@@ -357,9 +407,14 @@ span {
         background-color: $white;
       }
 }
+      .active {
+        opacity: 1;         
+        top: 0;            
+      }
+
 
 .works {
-  margin-bottom: 8.5%;
+  margin-bottom: 4%;
   &_wrapper {
     padding-bottom: 6%;
   }
@@ -367,10 +422,16 @@ span {
       display: flex;
       width: 90%;
       margin: 0 auto;
-      overflow: hidden;
       .slick-slide {//------スライドアイテムの間の余白指定
         padding: 0 10px;
       }
+      .slick-prev {
+        left: 0;
+    }
+    
+      .slick-next {
+        right: 0;
+    }
       .slick-dots li button:before {//----ドットの幅指定方法
         font-size: 1.6rem!important;
       }
@@ -402,23 +463,33 @@ span {
       }
     }
   }
-  .works_btn {
-    width: 18%;
-    padding: 1.5% 0;
-  }
 }
 
 .success {
   margin-bottom: 8.5%;
   &_box {
     display: flex;
+    opacity: 0;
+    transition: 1s;
+    top: 50px; 
+    position: relative;
+    @include mq(TB2) {
+    flex-direction: column;
+    align-items: center;
+    }
     &_img {
       width: 50%;
       height: auto;
+      @include mq(TB2) {
+        width: 100%;
+      }
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        @include mq(TB2) {
+          height: 70vh;
+        }
       }
     }
     &_txt {
@@ -426,6 +497,10 @@ span {
       width: 40%;
       margin-left: 5%;
       padding: 13% 0;
+      @include mq(TB2) {
+        width: 70%;
+        padding: 10% 0;
+      }
       &_ol {
         list-style-type: decimal-leading-zero;
         font-size: clamp(1.6rem,1.71vw,2.4rem);
@@ -441,13 +516,15 @@ span {
           }
           li {
             padding-bottom: 6%;
+            @include mq(TB2) {
+              padding-bottom: 10%;
+            }
             &:last-child {
               padding-bottom: 0;
             }
           }
       }
       &_logo {
-        // position: relative;
         margin: 0 auto;
         margin-bottom: 8%;
         width: 22%;
@@ -463,8 +540,10 @@ span {
     &_ttl {
       width: 70%;
       margin: 0 auto;
+      font-weight: bold;
+      color: $black;
       font-size: clamp(1.6rem,1.71vw,2.4rem);
-      padding-bottom: 3%;
+      padding-bottom: 4%;
     }
     &_inner {
       width: 70%;
@@ -474,30 +553,53 @@ span {
   } 
 }
 
+.active {
+  opacity: 1;
+  top: 0;
+}
+
 .news {
   &_box {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 8.5%;
+    @include mq(TB2) {
+      width: 100%;
+    }
     &_right {
       display: flex;
       align-items: center;
       width: 100%;
       margin-left: 10%;
-      // margin-bottom: 2rem;
+      @include mq(TB2) {
+        margin: unset;
+        justify-content: center;
+      }
     }
     &_txt {
       padding: 2.5rem 0;
-      width: 100%;
+      width: 75%;
+      @include mq(TB2) {
+        width: 48%;
+      }
     }
     &_pagenation {
       width: 20%;
-      
-      // margin-left: 40%;
+      @include mq(TB2) {
+        width: 10%;
+      }
         img {
           width: 100%;
           height: 100%;
+          margin: 0 8%;
           object-fit: contain;
+          &:hover {
+            opacity: 0.5;
+          }
+          @include mq(TB2) {
+            margin: unset;
+            margin-left: 50%;
+          }
         }
     }
       &_txt_date {
@@ -507,20 +609,28 @@ span {
         border-bottom: 1px solid $red;
       }
       &_txt_inner {
-        font-size: clamp(1.6rem,1.71vw,2.4rem);
-        
+        font-size: clamp(1.4rem,1.71vw,2.4rem);
       }
     &_inner {
       display: flex;
       margin-bottom: 2rem;
-      &:last-child {
-        margin-bottom: 0;
-      }
+        @include mq(TB2) {
+          margin-bottom: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        @include mq(TB2) {
+          flex-direction: column;
+        }
     }
     &_img {
       width: 100%;
       height: auto;
-      // margin-bottom: 2rem;
+        @include mq(TB2) {
+        width: 100%;
+        height: 25vh;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -538,12 +648,19 @@ span {
   }
   &_box {
     margin: 0 auto;
-    padding: 3% 6%;
+    padding: 5% 6%;
     background-color: $pink;
     display: flex;
+      @include mq(TB2) {
+      flex-direction: column;
+      align-items: center;
+    }
     &_img {
       width: 50%;
       height: auto;
+        @include mq(TB2) {
+        width: 100%;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -554,9 +671,15 @@ span {
     width: 50%;
     margin-left: 6%;
     padding-top: 15%;
+    @include mq(TB2) {
+      margin-left: 0;
+      width: 100%;
+    }
     .contact_btn {
-      width: 60%;
-      padding: 5% 0;
+      padding:unset;
+      width: 21rem;
+      padding: 2rem 1%;
+      display: block;
       border: 1px solid $blue;
       background-color: $white;
     }
@@ -568,10 +691,13 @@ span {
   .wave {
     position: relative;
     overflow: hidden;
-    padding-top: 14%;
-    padding-bottom: 10%;
+    padding-top: 13%;
+    padding-bottom: 8%;
     width: 100%;
-    
+    @include mq(SP2) {
+      padding-top: 20%;
+      padding-bottom: 20%;
+    }
     svg {
       position: absolute;
       z-index:-1;
@@ -591,6 +717,7 @@ span {
     text-align: center;
     margin-bottom: 2%;
     font-size: clamp(1.4rem,2.85vw,4rem);
+    font-weight: bold;
   }
   &_adress_box {
     display: flex;
@@ -599,6 +726,7 @@ span {
     .adress1_shopname,
     .adress2_shopname {
       margin-bottom: 5%;
+      font-weight: bold;
     }
   }
   &_adress1 {

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>美容サロンHP作成会社SARISARI</title>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>美容サロンHP作成会社SARISARI</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Kiwi+Maru:wght@300;400&family=Yomogi&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" >
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Kiwi+Maru:wght@300;400&family=Yomogi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" >
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
 </head>
 
 <body>
@@ -25,15 +25,12 @@
   <header class="header">
     <div class="header_inner">
       <div class="header_logo logo"><a href="../index.html">SARISARI</a></div> 
-    
-    
     <nav class="header_nav">  
       <ul class="header_ul">
-        <li class="header_li"><a href="/company.html">会社概要</a></li>
-        <li class="header_li"><a href="/works.html">制作実績</a></li>
-        <li class="header_li"><a href="/success.html">成功事例</a></li>
-        <li class="header_li"><a href="/news.html">お知らせ</a></li>
-        <li class="header_li"><a href="/contact.html">お問合せ</a></li>
+        <li class="header_li"><a href="company.html">会社概要</a></li>
+        <li class="header_li"><a href="works.html">制作実績</a></li>
+        <li class="header_li"><a href="news.html">お知らせ</a></li>
+        <li class="header_li"><a href="contact.html">お問合せ</a></li>
       </ul>
     </nav>
   </div>
@@ -43,14 +40,50 @@
   </header>
 
   <main>
-
-    <div class="underlayer_top_wrapper">
+    <div class="underlayer_top_wrapper contact_top_wrapper">
       <div class="underlayer_top_inner">
-        <div class="page_top_ttl">NEWS<br><span class="underlayer_sub_ttl">お知らせ</span></div>
-        <div class="page_top_txt">お得な情報や、企画イベント開始の時期等のお知らせをしていきます</div>
+        <div class="page_top_ttl">CONTACT<br><span class="underlayer_sub_ttl">お問合せ</span></div>
+        <div class="page_top_txt">些細な事でもかまいませんのでお気軽にお問合せください</div>
       </div>
     </div>
 
+
+    <div class="under_wrapper">
+      <div class="under_contact">
+        <div class="section_ttl">お問合せ<br><span class="sub_ttl">Contact</span></div>
+      </div>
+    <div class="under_box"></div>
+
+    <div class="contact_form_wrapper fadeIn">
+      <form action="">
+        <div class="contact_form_item">
+          <label for="name">お名前</label>
+          <input type="text" id="name" name="your-name">
+        </div>
+
+        <div class="contact_form_item">
+          <label for="email">メールアドレス</label>
+          <input type="email" id="email" name="your-email">
+        </div>
+
+        <div class="contact_form_item">
+          <label for="tel">メールアドレス</label>
+          <input type="tel" id="tel" name="your-tel">
+        </div>
+
+        <div class="contact_form_item">
+          <label for="message">お問い合わせ内容</label>
+          <textarea id="message" name="your-message"></textarea>
+        </div>
+
+        <input type="submit" class="send_btn" value="send">
+      </form>
+    </div>
+    <div class="contact_form_txt">
+      <p class="contact_form_txt_ttl">不明な事、些細な事でもお電話の方がご都合が良い場合はご連絡ください！</p>
+      <p class="contact_form_txt_tel">Tel 000-0000-0000</p>
+    </div>
+    </div>   
   </main>
 
   <footer class="footer">
@@ -59,7 +92,7 @@
     </div>
 
     <div class="footer_inner">
-      <div class="footer_logo">SARISARI</div>
+      <div class="footer_logo"><a href="../index.html">SARISARI</a></div>
       <div class="footer_adress_box">
         <div class="footer_adress1">
           <p class="adress1_shopname">SARISARI&nbsp;東京〇〇支店</p>
@@ -72,12 +105,13 @@
       </div>
     </div>
   </footer>
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js" integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew==" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-      <script src="../js/main.js"></script>
-      <script src="../js/slide.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js" integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew==" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/slide.js"></script>
+    <script src="../js/scroll.js"></script>
   </body>
-  </html>
+</html>
