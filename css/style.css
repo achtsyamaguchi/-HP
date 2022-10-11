@@ -969,7 +969,6 @@ input, select {
   width: fit-content;
   margin: 0 auto;
   margin-bottom: 5%;
-  padding-bottom: 1%;
   font-family: "Architects Daughter", cursive;
   font-size: clamp(2rem, 2.85vw, 4rem);
   border-bottom: 2px solid rgba(44, 14, 132, 0.09);
@@ -1065,7 +1064,7 @@ table td {
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  padding: 3%;
+  padding: 2%;
   font-size: 1.6rem;
 }
 .under_wrapper form .contact_form_item input[type=text],
@@ -1309,7 +1308,7 @@ table td {
   width: fit-content;
   margin: 0 auto;
   padding-top: 10%;
-  margin-bottom: 12%;
+  margin-bottom: 6%;
   border-bottom: 1px solid rgb(26, 5, 85);
 }
 .under_wrapper .works_flow_inner_ttl p {
