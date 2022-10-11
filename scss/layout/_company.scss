@@ -85,6 +85,9 @@ table {
   text-align: left;
   margin-bottom: 8%;
   font-size: clamp(1.6rem,1.71vw,2.4rem);
+  @include mq(SP2) {
+    width: 70%;
+  }
   tr {
     border-bottom: 1px solid $blue2;
   }

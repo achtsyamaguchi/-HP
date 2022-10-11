@@ -174,7 +174,7 @@ button {
       color: $black;
       @include mq(TB) {
         color: #fff;
-        font-size: 2rem;
+        font-size: 3rem;
       }
     }
   }
@@ -311,6 +311,10 @@ span {
   @include mq(TB-L) {
     top: 45%;
     left: 30%
+  }
+  @include mq(SP-s) {
+    top: 36%;
+    left: 18%;
   }
 }
 
@@ -545,6 +549,12 @@ span {
         img {
           width: 100%;
         }
+        @include mq(SP-s) {
+          width: 30%;
+          img {
+            width: 100%;
+          }
+        }
       }
     }
   }
@@ -577,6 +587,7 @@ span {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 8.5%;
+    
     @include mq(TB2) {
       width: 100%;
     }
@@ -594,7 +605,7 @@ span {
       padding: 2.5rem 0;
       width: 75%;
       @include mq(TB2) {
-        width: 48%;
+        width: 49%;
       }
     }
     &_pagenation {
@@ -651,6 +662,9 @@ span {
         object-fit: cover;
       }
     }
+  }
+  .news_box .news_box_inner:nth-of-type(3) .news_box_txt {
+    padding-bottom: 0;
   }
 }
 
