@@ -8,9 +8,6 @@ $(window).on('load', function () {
   },3000)
 })
 
-// steTimeout('endLoading()', 10000);
-
-
 
 
 $(".openbtn_inner").click(function () {
